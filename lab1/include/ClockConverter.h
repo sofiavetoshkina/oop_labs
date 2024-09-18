@@ -2,4 +2,4 @@
 
 #include <string>
 
-std::string ClockConverter(int hour, int minute, const std::string period);
+std::string ClockConverter(int hour, int minute, const std::string& period);
