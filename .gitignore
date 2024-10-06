@@ -34,5 +34,3 @@
 lab2/build/*
 .vscode/*
 lab2/googletest/*
-lab1/build/*
-lab1/googletest/*
