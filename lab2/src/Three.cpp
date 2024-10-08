@@ -3,7 +3,7 @@
 #include <stdexcept>
 #include "Three.h"
 
-bool Three::isTernary(const unsigned char symbol){
+bool Three::isTernary(const unsigned char& symbol){
     return (symbol >= '0' && symbol <= '2');
 }
 
@@ -155,12 +155,58 @@ bool Three::greater_than(const Three& other) const{
         return false;
     if (_size == 0)
         return false;
-    size_t i = _size - 1;
+    int i = _size - 1;
     while (i >= 0 && _array[i] == other._array[i])
         --i;
     if (i == -1)
         return false;
     return _array[i] > other._array[i];
+}
+
+bool Three::operator >(const Three& other) const{
+    return greater_than(other);
+}
+
+bool Three::operator >=(const Three& other) const{
+    return greater_than(other) || equals(other);
+}
+
+bool Three::operator <(const Three& other) const{
+    return less_than(other);
+}
+
+bool Three::operator <=(const Three& other) const{
+    return less_than(other) || equals(other);
+}
+
+Three Three::operator +(const Three& other) const{
+    return add(other);
+}
+
+Three Three::operator -(const Three& other) const{
+    return subtract(other);
+}
+
+Three& Three::operator =(const Three& other){
+    if (this != &other){
+        delete[] _array;
+        _array = new unsigned char[_size];
+        for (size_t i = 0; i < _size; i++){
+            _array[i] = other._array[i];
+        }
+    }
+    return *this;
+}
+
+Three& Three::operator =(Three&& other) noexcept{
+    if (this != &other){
+        delete[] _array;
+        _size = other._size;
+        _array = other._array;
+        other._size = 0;
+        other._array = nullptr;
+    }
+    return *this;
 }
 
 std::ostream& Three::print(std::ostream& os){

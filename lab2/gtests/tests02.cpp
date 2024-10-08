@@ -70,6 +70,16 @@ TEST(tests02, add_2){
     ASSERT_EQ(os1.str(), os2.str());
 }
 
+TEST(tests02, add_3){
+    Three t1{'1', '0', '0', '2'};
+    Three t2("111");
+    Three result = t1 + t2;
+    std::stringstream os1, os2;
+    result.print(os1);
+    os2 << "1120";
+    ASSERT_EQ(os1.str(), os2.str());
+}
+
 // Тест вычитания двух троичных чисел
 TEST(tests02, subtract_1){
     Three t1{'2', '2', '2'};
@@ -86,6 +96,16 @@ TEST(tests02, subtract_2){
     Three t1{'1', '1', '1'};
     Three t2("22");
     Three result = t1.subtract(t2);
+    std::stringstream os1, os2;
+    result.print(os1);
+    os2 << "12";
+    ASSERT_EQ(os1.str(), os2.str());
+}
+
+TEST(tests02, subtract_3){
+    Three t1{'1', '1', '1'};
+    Three t2("22");
+    Three result = t1 - t2;
     std::stringstream os1, os2;
     result.print(os1);
     os2 << "12";
@@ -140,6 +160,43 @@ TEST(tests02, exception_2){
     Three t1{'2', '2'};
     Three t2("222");
     ASSERT_THROW(t1.subtract(t2), std::range_error);
+}
+
+//Тесты на перегрузку операторов
+TEST(tests02, operators){
+    Three t1{'1', '1', '0'};
+    Three t2("222");
+    ASSERT_FALSE(t1 > t2);
+    ASSERT_FALSE(t1 >= t2);
+    ASSERT_TRUE(t1 < t2);
+    ASSERT_TRUE(t1 <= t2);
+    Three t3{'2', '2', '2'};
+    ASSERT_TRUE(t2 >= t3);
+    ASSERT_TRUE(t2 <= t3);
+    ASSERT_FALSE(t2 > t3);
+    ASSERT_FALSE(t2 < t3);
+}
+
+// Тест на оператор копирования
+TEST(tests02, copy_operator){
+    Three t1("12");
+    Three t2("10");
+    t2 = t1;
+    std::stringstream os1, os2;
+    t1.print(os1);
+    t2.print(os2);
+    ASSERT_EQ(os1.str(), os2.str());
+}
+
+// Тест на оператор перемещения
+TEST(tests02, move_operator){
+    Three t1("12");
+    Three t2("10");
+    t2 = std::move(t1);
+    std::stringstream os1, os2;
+    t2.print(os1);
+    os2 << "12";
+    ASSERT_EQ(os1.str(), os2.str());
 }
 
 int main(int argc, char **argv){
