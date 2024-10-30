@@ -4,6 +4,7 @@
 #include "triangle.h"
 #include "square.h"
 #include "rectangle.h"
+#include "figurearray.h"
 
 int main(){
     Vertex a(1, 2);
@@ -44,6 +45,15 @@ int main(){
 
     Rectangle r({1, 5}, 4, 3); 
     std::cout << "Rectangle: " << r << " ; center = " << r.getCenter() << " ; area = " << double(r) << std::endl;
+    
+    FigureArray array;
+    array.pushBack(&tr);
+    array.pushBack(&sq);
+    array.pushBack(&r);
+    std::cout << "Текущий размер массива: " << array.size() << std::endl;
+    array.erase(1);
+    std::cout << "Размер массива после удаления: " << array.size() << std::endl;
+    std::cout << "Общая площадь всех фигур в массиве: " << array.totalArea() << std::endl;
     
     return 0;
 }
