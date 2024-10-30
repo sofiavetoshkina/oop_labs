@@ -3,6 +3,7 @@
 #include "vertex.h"
 #include "triangle.h"
 #include "square.h"
+#include "rectangle.h"
 
 int main(){
     Vertex a(1, 2);
@@ -40,6 +41,9 @@ int main(){
 
     Square sq({1, 5}, 4); 
     std::cout << "Square: " << sq << " ; center = " << sq.getCenter() << " ; area = " << double(sq) << std::endl;
+
+    Rectangle r({1, 5}, 4, 3); 
+    std::cout << "Rectangle: " << r << " ; center = " << r.getCenter() << " ; area = " << double(r) << std::endl;
     
     return 0;
 }
