@@ -2,6 +2,7 @@
 #include <vector>
 #include "vertex.h"
 #include "triangle.h"
+#include "square.h"
 
 int main(){
     Vertex a(1, 2);
@@ -36,5 +37,9 @@ int main(){
     std::cout << (tr==tr1) << std::endl;
     tr=tr1;
     std::cout << tr << "; " << tr1 << std::endl;
+
+    Square sq({1, 5}, 4); 
+    std::cout << "Square: " << sq << " ; center = " << sq.getCenter() << " ; area = " << double(sq) << std::endl;
+    
     return 0;
 }

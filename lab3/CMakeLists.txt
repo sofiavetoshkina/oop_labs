@@ -17,7 +17,7 @@ FetchContent_Declare(
 )
 FetchContent_MakeAvailable(googletest)
 
-add_executable(lab3 include/vertex.h include/triangle.h include/figure.h 
-src/vertex.cpp src/triangle.cpp main.cpp)
+add_executable(lab3 include/vertex.h include/triangle.h include/figure.h include/square.h
+src/vertex.cpp src/triangle.cpp src/square.cpp main.cpp)
 target_include_directories(lab3 PRIVATE include)
 
