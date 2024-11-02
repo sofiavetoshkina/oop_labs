@@ -17,16 +17,16 @@ public:
     Vertex& operator=(const Vertex& other); // Оператор копирования
     Vertex& operator=(Vertex &&other) noexcept; // Оператор перемещения
 
-	Vertex operator+(const Vertex& other) const; // Оператор сложения координат двух вершин
-	Vertex operator-(const Vertex& other) const; // Оператор вычитания координат двух вершин
+    Vertex operator+(const Vertex& other) const; // Оператор сложения координат двух вершин
+    Vertex operator-(const Vertex& other) const; // Оператор вычитания координат двух вершин
 
-	Vertex& operator+=(const Vertex& other);
-	Vertex& operator-=(const Vertex& other);
+    Vertex& operator+=(const Vertex& other);
+    Vertex& operator-=(const Vertex& other);
 
-	bool operator==(const Vertex& other) const; // Оператор проверки на равенство
+    bool operator==(const Vertex& other) const; // Оператор проверки на равенство
     
-	friend std::ostream& operator<<(std::ostream& os, const Vertex& vertex);
-	friend std::istream& operator>>(std::istream& is, Vertex& vertex);
+    friend std::ostream& operator<<(std::ostream& os, const Vertex& vertex);
+    friend std::istream& operator>>(std::istream& is, Vertex& vertex);
 
 private:
     double _x;
