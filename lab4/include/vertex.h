@@ -31,7 +31,7 @@ public:
         }
         return *this;
     }
-    Vertex<T>& operator=(Vertex &&other) noexcept { // Оператор перемещения
+    Vertex<T>& operator=(Vertex<T>&& other) noexcept { // Оператор перемещения
         if (this != &other) {
             _x = std::move(other._x);
             _y = std::move(other._y);
@@ -51,13 +51,13 @@ public:
 	    _y += other._y;
 	    return *this;
     }
-    Vertex<T>& operator-=(const Vertex& other) {
+    Vertex<T>& operator-=(const Vertex<T>& other) {
 	    _x -= other._x;
 	    _y -= other._y;
 	    return *this;       
     }
 
-    bool operator==(const Vertex& other) const { // Оператор проверки на равенство
+    bool operator==(const Vertex<T>& other) const { // Оператор проверки на равенство
         return (_x == other._x && _y == other._y);
     }
 

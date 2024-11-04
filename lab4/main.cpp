@@ -17,5 +17,6 @@ int main() {
     std::cout << "Total area: " << array.totalArea() << std::endl;
     array.pushBack(new Triangle<int>({Vertex<int>(0, 0), Vertex<int>(3, 0), Vertex<int>(0, 3)}));
     std::cout << "Total area: " << array.totalArea() << std::endl;
+    
     return 0;
 }

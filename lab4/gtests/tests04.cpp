@@ -32,8 +32,8 @@ TEST(TriangleTests, TrianglesEqual) {
 TEST(SquareTests, SquareCenter){
     Square<int> sq({1, 5}, 4);
     Vertex<int> center = sq.getCenter();
-    EXPECT_DOUBLE_EQ(center.getX(), 3);
-    EXPECT_DOUBLE_EQ(center.getY(), 3);
+    EXPECT_EQ(center.getX(), 3);
+    EXPECT_EQ(center.getY(), 3);
 }
 
 TEST(SquareTests, SquareArea) {
@@ -64,12 +64,22 @@ TEST(FigureArray, TotalAreaSquare) {
     EXPECT_DOUBLE_EQ(array.totalArea(), answer);
 }
 
-TEST(FigureArray, TotalAreaWithErase) {
+TEST(FigureArray, TotalAreaWithEraseInt) {
     FigureArray<Figure<int>*> array;
     array.pushBack(new Square<int>(Vertex<int>(1, 5), 4)); 
     array.pushBack(new Rectangle<int>(Vertex<int>(0, 4), 4, 2));
     array.erase(0); // Удаляем по индексу 0
     array.pushBack(new Triangle<int>({Vertex<int>(0, 0), Vertex<int>(3, 0), Vertex<int>(0, 3)}));
+    double answer = 12.5;
+    EXPECT_DOUBLE_EQ(array.totalArea(), answer);
+}
+
+TEST(FigureArray, TotalAreaWithEraseDouble) {
+    FigureArray<Figure<double>*> array;
+    array.pushBack(new Square<double>(Vertex<double>(1.0, 5.0), 4.0)); 
+    array.pushBack(new Rectangle<double>(Vertex<double>(0.0, 4.0), 4.0, 2.0));
+    array.erase(0); // Удаляем по индексу 0
+    array.pushBack(new Triangle<double>({Vertex<double>(0.0, 0.0), Vertex<double>(3.0, 0.0), Vertex<double>(0.0, 3.0)}));
     double answer = 12.5;
     EXPECT_DOUBLE_EQ(array.totalArea(), answer);
 }
