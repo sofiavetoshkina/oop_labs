@@ -48,13 +48,13 @@ public:
 
     Vertex<T>& operator+=(const Vertex<T>& other) {
         _x += other._x;
-	    _y += other._y;
-	    return *this;
+        _y += other._y;
+        return *this;
     }
     Vertex<T>& operator-=(const Vertex<T>& other) {
-	    _x -= other._x;
-	    _y -= other._y;
-	    return *this;       
+        _x -= other._x;
+        _y -= other._y;
+        return *this;       
     }
 
     bool operator==(const Vertex<T>& other) const { // Оператор проверки на равенство
@@ -75,11 +75,11 @@ private:
 template <Scalar T>
 std::ostream& operator<<(std::ostream& os, const Vertex<T>& vertex) {
     os << "(" << vertex._x << ", " << vertex._y << ")";
-	return os;
+    return os;
 }
     
 template <Scalar T>
 std::istream& operator>>(std::istream& is, Vertex<T>& vertex) {
     is >> vertex._x >> vertex._y;
-	return is;
+    return is;
 }

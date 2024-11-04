@@ -51,13 +51,13 @@ public:
 
     bool operator==(const Triangle<T>& other) const { // Сравнение на равенство
         for (int i = 0, j = 0; j < TR_POINTS; ++j) {
-	        if (i == TR_POINTS) return true;
-		    else if (vertices[i] == other.vertices[j]) {
-			    ++i;
-			    j = -1;
-		    }
-	    }
-	    return false;
+            if (i == TR_POINTS) return true;
+            else if (vertices[i] == other.vertices[j]) {
+                ++i;
+                j = -1;
+                }
+        }
+        return false;
     }
 
     operator double() const override { // Переопределение double для получения площади
@@ -94,10 +94,10 @@ std::ostream& operator<<(std::ostream& os, const Triangle<T>& triangle) {
 
 template <typename T>
 std::istream& operator>>(std::istream& is, Triangle<T>& triangle) {
-    std::vector<Vertex<T>> vertices(TR_POINTS);
+    std::vector<Vertex<T>> verices(TR_POINTS);
     for (int i = 0; i < TR_POINTS; ++i) {
-        is >> vertices[i];
+        is >> verices[i];
     }
-    triangle = Triangle<T>(vertices);
+    triangle = Triangle<T>(verices);
     return is;
 }
