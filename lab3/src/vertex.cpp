@@ -27,7 +27,7 @@ Vertex& Vertex::operator=(const Vertex& other) {
     return *this;
 }
 
-Vertex& Vertex::operator=(Vertex &&other) noexcept {
+Vertex& Vertex::operator=(Vertex&& other) noexcept {
     if (this != &other){
         _x = other._x;
         _y = other._y;

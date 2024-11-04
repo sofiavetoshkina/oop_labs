@@ -10,11 +10,11 @@ public:
     FigureArray(size_t n);
     ~FigureArray();
 
-    FigureArray(const FigureArray&); // Конструктор копирования
-    FigureArray(FigureArray&&); // Конструктор перемещения
+    FigureArray(const FigureArray& other); // Конструктор копирования
+    FigureArray(FigureArray&& other) noexcept; // Конструктор перемещения
 
     Figure* & operator[] (size_t ind);  // Оператор доступа к элементу массива по индексу (для изменения)
-    Figure* const & operator[] (size_t ind) const; // Оператор доступа к элементу массива по индексу (для чтения)
+    Figure* & operator[] (size_t ind) const; // Оператор доступа к элементу массива по индексу (для чтения)
 
     size_t size() const;
     void resize(size_t newSize);

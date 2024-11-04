@@ -39,7 +39,7 @@ FigureArray::FigureArray(const FigureArray& other) {
     capacity = other.capacity;
 }
 
-FigureArray::FigureArray(FigureArray&& other) {
+FigureArray::FigureArray(FigureArray&& other) noexcept {
     data = other.data;
     curSize = other.size();
     capacity = other.capacity;
@@ -50,7 +50,7 @@ Figure* & FigureArray::operator[] (size_t ind) {
     return data[ind];
 }
 
-Figure* const & FigureArray::operator[] (size_t ind) const {
+Figure* & FigureArray::operator[] (size_t ind) const {
     return data[ind];
 }
 

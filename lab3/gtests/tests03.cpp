@@ -25,7 +25,7 @@ TEST(TriangleTests, TriangleArea) {
 
 TEST(TriangleTests, TrianglesEqual) {
     Triangle tr1({ {0.0, 0.0}, {1.0, 1.0}, {2.0, 0.0} });
-    Triangle tr2({ {0.0, 0.0}, {2.0f, 0.0}, {1.0f, 1.0} });
+    Triangle tr2({ {0.0, 0.0}, {2.0, 0.0}, {1.0, 1.0} });
     ASSERT_TRUE(tr1 == tr2);
 }
 

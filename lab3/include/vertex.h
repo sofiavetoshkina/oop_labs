@@ -15,7 +15,7 @@ public:
     double getY() const; // Метод для получения значения y
 
     Vertex& operator=(const Vertex& other); // Оператор копирования
-    Vertex& operator=(Vertex &&other) noexcept; // Оператор перемещения
+    Vertex& operator=(Vertex&& other) noexcept; // Оператор перемещения
 
     Vertex operator+(const Vertex& other) const; // Оператор сложения координат двух вершин
     Vertex operator-(const Vertex& other) const; // Оператор вычитания координат двух вершин
