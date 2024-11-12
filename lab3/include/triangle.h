@@ -27,6 +27,6 @@ public:
     friend std::ostream& operator<<(std::ostream& os, const Triangle& triangle);
     friend std::istream& operator>>(std::istream& is, Triangle& triangle);
 
-protected:
+private:
     std::vector<Vertex> vertices;
 };

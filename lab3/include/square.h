@@ -23,7 +23,7 @@ public:
     friend std::ostream& operator<<(std::ostream& os, const Square& sq);
     friend std::istream& operator>>(std::istream& is, Square& sq);
 
-protected:
+private:
     Vertex vertex;
     double width; 
 };

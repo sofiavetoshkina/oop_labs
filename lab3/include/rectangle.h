@@ -23,7 +23,7 @@ public:
     friend std::ostream& operator<<(std::ostream& os, const Rectangle& r);
     friend std::istream& operator>>(std::istream& is, Rectangle& r);
 
-protected:
+private:
     Vertex vertex;
     double width; 
     double height;
