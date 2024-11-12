@@ -45,7 +45,7 @@ public:
     template <typename V>
     friend std::istream& operator>>(std::istream& is, Square<V>& sq);
 
-protected:
+private:
     Vertex<T> vertex;
     T width; 
 };

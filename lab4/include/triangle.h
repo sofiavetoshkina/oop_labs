@@ -80,7 +80,7 @@ public:
     template <typename V>
     friend std::istream& operator>>(std::istream& is, Triangle<V>& triangle);
 
-protected:
+private:
     std::vector<Vertex<T>> vertices;
 };
 

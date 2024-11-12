@@ -48,7 +48,7 @@ public:
     template <typename V>
     friend std::istream& operator>>(std::istream& is, Rectangle<V>& r);
 
-protected:
+private:
     Vertex<T> vertex;
     T width; 
     T height;
