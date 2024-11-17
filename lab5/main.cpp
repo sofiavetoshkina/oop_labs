@@ -24,14 +24,14 @@ int main() {
     for (auto& item : int_queue) {
         std::cout << item << " ";
     }
-    std::cout << "\n";
+    std::cout << std::endl;
 
     Queue<ComplexType, decltype(alloc_complex)> complex_queue(alloc_complex);
     complex_queue.push({1, "Alice"});
     complex_queue.push({2, "Bob"});
 
     for (auto& item : complex_queue) {
-        std::cout << item.id << ": " << item.name << "\n";
+        std::cout << item.id << ": " << item.name << std::endl;
     }
 
     return 0;
