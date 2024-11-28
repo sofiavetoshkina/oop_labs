@@ -37,7 +37,7 @@ TEST(NPCTest, AcceptTest) {
     EXPECT_EQ(dragon->accept(knight), 1);
 }
 
-TEST(NPCTest, visitTest) {
+TEST(NPCTest, VisitTest) {
     std::shared_ptr<NPC> knight, frog, dragon;
     frog = std::make_shared<Frog>("Frog1", 112, 50);
     knight = std::make_shared<Knight>("Knight1", 120, 30);
